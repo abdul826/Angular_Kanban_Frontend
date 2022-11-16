@@ -1,0 +1,112 @@
+<header class="mynavbar">
+    
+    <!-- <nav class="navbar navbar-expand-lg navbar-light" >
+        <div class="container-fluid" style="display: flexbox; ">
+            <h2 class="kanbantitle">Kanban Board</h2>
+            <a 
+            *ngIf="!isLoggedIn"
+            routerLink="/signup"><button class="btn btn-outline-secondary sbtn">Signup</button></a>
+            <a
+            *ngIf="!isLoggedIn" 
+            routerLink="/signin"><button class="btn btn-outline-secondary sbtn">Signin</button></a>
+            <div>
+                
+                <h1 class="btn btn-lg btn-block" type="button" (click)="wel()">
+                    Home
+                </h1>
+                <h1 class="btn btn-lg btn-block" type="button" (click)="onAbout()">
+                    About
+                </h1>
+                <h1 class="btn btn-lg" type="button" (click)="onCreate()">
+                    Create
+                </h1>
+                <h1 class="btn btn-lg btn-block" type="button" (click)="onContact()">
+                    Contact us
+                </h1>
+                <h1 
+                *ngIf="isLoggedIn"
+                class="btn" type="button" (click)="logout()">
+                    Logout
+                </h1>
+            </div>
+        </div>
+    </nav>
+    
+</header> -->
+
+<!-- ************* -->
+
+   
+<mat-toolbar color="primary">
+
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+
+     <!-- <mat-icon>menu_book</mat-icon> -->
+
+   </button>
+
+   <a routerLink="/" class="exam"><span >Kanban</span></a>
+
+   <span class="example-spacer"></span>
+
+   <a
+
+   *ngIf="!isLoggedIn"
+
+   routerLink="/signin">
+
+   <button class="btn btn-outline-primary">
+
+     <!-- <mat-icon>login</mat-icon> -->SignIn
+
+   </button></a>
+
+   <a
+
+   *ngIf="!isLoggedIn"
+
+    routerLink="/signup">
+
+   <button class="btn btn-outline-primary mx-2">
+
+    Signup
+
+    </button>
+
+</a>
+
+<div>
+                
+    <h1  *ngIf="isLoggedIn" class="btn btn-lg btn-block" type="button" (click)="wel()">
+        Home
+    </h1>
+    <h1  *ngIf="isLoggedIn" class="btn btn-lg btn-block" type="button" (click)="onCreate()">
+        Create
+    </h1>
+    <h1  *ngIf="isLoggedIn" class="btn btn-lg btn-block" type="button" (click)="onAbout()">
+        About
+    </h1>
+    <h1  *ngIf="isLoggedIn" class="btn btn-lg btn-block" type="button" (click)="onContact()">
+        Contact 
+    </h1>
+</div>
+
+<a
+
+  (click)="logout()"
+
+   *ngIf="isLoggedIn"
+
+   >
+
+   <button class="btn btn-primary mx-2">
+
+    Logout
+
+    </button>
+
+</a>
+
+
+
+ </mat-toolbar>

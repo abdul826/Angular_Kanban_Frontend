@@ -1,0 +1,10 @@
+.container-fluid{
+    height: 645px;
+    background-color: rgba(201, 201, 201, 0.337);
+}
+.full_width{
+    width: 70%;
+}
+.contactBtn{
+    margin-left: 17%;
+}

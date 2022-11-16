@@ -1,0 +1,150 @@
+<app-header></app-header>
+<div class="container-fluid maindiv pt-5">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <mat-card class="example-card">
+            <div class="container signupimage">
+                <img src="../../assets/kanban.jpg" alt="">
+            </div>
+            <h1 class="text-center mt-2">Registration</h1>
+
+            <!-- form -->
+
+            <form 
+            *ngIf="!isSuccessful"
+            name="form"
+            (ngSubmit)="f.form.valid && formSubmit()"
+            #f="ngForm"
+            novalidate
+            >
+              <div class="container d-flex justify-content-center align-items-center flex-column">
+                <mat-form-field class="full_width" appearance="outline">
+                    <mat-label>UserName</mat-label>
+                    <input
+                    [(ngModel)]="user.username"
+                    name="username"
+                    required
+                    minlength="4"
+                    maxlength="20"
+                    #username="ngModel"
+                    matInput placeholder="Enter Username">
+                    <mat-hint>Username must be unique</mat-hint>
+                  </mat-form-field>
+                  <!-- Alert MSg -->
+                  <div class="alert-danger" *ngIf="username.errors && f.submitted">
+                    <div *ngIf="username.errors['required']">Username is required</div>
+                    <div *ngIf="username.errors['minlength']">
+                      <p style="color: red;">Username must be at least 4 characters</p>
+                    </div>
+                    <div *ngIf="username.errors['maxlength']">
+                      <p  style="color:red;">Username must be at most 20 characters</p>
+                    </div>
+                  </div>
+
+                  <mat-form-field class="full_width" appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input
+                    [(ngModel)]="user.firstname"
+                    name="firstname"
+                    type="text"
+                    required
+                    minlength="3"
+                    maxlength="10"
+                    #firstname="ngModel"
+                     matInput placeholder="Enter First Name">
+                    <!-- <mat-hint>Hint</mat-hint> -->
+                  </mat-form-field>
+
+                  <!-- Alert Msg -->
+                  <div class="alert-danger" *ngIf="firstname.errors && f.submitted">
+                    <div *ngIf="firstname.errors['required']"><p style="color: red;">Firstname is required</p></div>
+                    <div *ngIf="firstname.errors['minlength']">
+                      <p style="color: red;">Firstname must be at least 3 characters</p>
+                    </div>
+
+                    <div *ngIf="firstname.errors['maxlength']">
+                      <p style="color: red;">Firstname max length should be of 10 characters</p>
+                    </div>
+                  </div>
+
+                  <mat-form-field class="full_width" appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input
+                    [(ngModel)]="user.lastname"
+                    name="lastname"
+                    type="text"
+                    required
+                    minlength="3"
+                    maxlength="10"
+                    #lastname="ngModel"
+                    matInput placeholder="Enter Last Name">
+                    <!-- <mat-hint>Hint</mat-hint> -->
+                  </mat-form-field>
+
+                   <!-- Alert Msg -->
+                   <div class="alert-danger" *ngIf="lastname.errors && f.submitted">
+                    <div *ngIf="lastname.errors['required']"><p style="color: red;">Lastname is required</p></div>
+                    <div *ngIf="lastname.errors['minlength']">
+                      <p style="color: red;">Lastname must be at least 3 characters</p>
+                    </div>
+
+                    <div *ngIf="lastname.errors['maxlength']">
+                      <p style="color: red;">Lastname max length should be of 10 characters</p>
+                    </div>
+                  </div>
+
+                  <mat-form-field class="full_width" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input
+                    [(ngModel)]="user.email"
+                    name="email"
+                    type="email"
+                    required
+                    email
+                    #email="ngModel"
+                    matInput placeholder="Enter Email">
+                    <!-- <mat-hint>Hint</mat-hint> -->
+                  </mat-form-field>
+
+                  <!-- alert msg -->
+                  <div class="alert-danger" *ngIf="email.errors && f.submitted">
+                    <div *ngIf="email.errors['required']"><p style="color: red;">Email is required</p></div>
+                    <div *ngIf="email.errors['email']">
+                      <p style="color:red;">Email must be a valid email address</p>
+                    </div>
+                  </div>
+
+                  <mat-form-field class="full_width" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input
+                    type="password"
+                    [(ngModel)]="user.password"
+                    name="password"
+                    required
+                    minlength="6"
+                    #password="ngModel"
+                    matInput placeholder="Enter Password">
+                    <!-- <mat-hint>Hint</mat-hint> -->
+                  </mat-form-field>
+
+                  <!--Aleert MSg  -->
+                  <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                    <div *ngIf="password.errors['required']"><p style="color: red;">Password is required</p></div>
+                    <div *ngIf="password.errors['minlength']">
+                     <p style="color: red;"> Password must be at least 6 characters</p>
+                    </div>
+                  </div>
+
+                </div>
+
+                <button mat-raised-button color="primary" class="signupBtn">Signup</button>
+            </form>
+        </mat-card>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Footer -->
+<app-footer></app-footer>

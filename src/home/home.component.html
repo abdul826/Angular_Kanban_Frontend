@@ -1,0 +1,59 @@
+<app-header></app-header>
+<!-- <div  class="card" style="background-color: antiquewhite;">
+    
+        
+    <div class="card-body" style="text-align: center;">
+        <div class="row" style="margin-top: 11.5%;margin-bottom: 11%;">
+            <div class="col-md-4"></div>
+            <div class="col-md-4" style="text-align: center;font-weight: 1000;font-family: cursive;font-size: xx-large;">
+                Give a name for kanban:
+                <input type="text" [(ngModel)]='kanban.title'/>
+            </div>
+            <p></p>
+            <div class="col-md-5"></div>
+            
+            <div >
+                <button class="btn btn-success " type="submit" (click)="onSubmit()">submit</button>
+            </div>
+            <p></p>
+            <div class="col-md-5"></div>
+            <div>
+                <button class="btn btn-primary btn-sm" type="submit" (click)="onNavigate()">getAllKanban</button>
+            </div>
+        </div>
+        
+    </div>
+</div>     -->
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <mat-card class="example-card">
+                    <h2 class="heading">Give a name for Kanban:</h2>
+
+                    <div class="container formField">
+                        <p class="col-md-6 offset-md-3">
+                            <mat-form-field class="full_width" appearance="legacy">
+                              <!-- <mat-label>Legacy form field</mat-label> -->
+                              <input matInput placeholder="Enter Value" [(ngModel)]='kanban.title'>
+                              <mat-hint>Hint</mat-hint>
+                            </mat-form-field>
+                          </p>
+                    </div>
+
+                    <div class="container">
+                        <div class="row bownbtn">
+                            <button class="btn btn-success submit" type="submit" (click)="onSubmit()">Submit</button>
+                            <button class="submit" mat-raised-button color="primary" (click)="onNavigate()">GET ALL KANBANS</button>
+                        </div>
+                    </div>
+
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<app-footer></app-footer>

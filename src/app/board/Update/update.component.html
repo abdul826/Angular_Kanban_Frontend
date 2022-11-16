@@ -1,0 +1,54 @@
+<!-- <form> -->
+    <!-- <div class="form-group">
+        <label for="exampleInputEmail1">Task id</label>
+        <input type="text" [(ngModel)]="task.id" class="form-control" [ngModelOptions]="{standalone: true}"  aria-describedby="emailHelp" [placeholder]="task.id">
+        
+      </div> -->
+    <!-- <div class="form-group">
+      <label for="exampleInputEmail1">Task title</label>
+      <input type="text" [(ngModel)]="task.title" class="form-control" [ngModelOptions]="{standalone: true}"  aria-describedby="emailHelp" placeholder="task.title">
+      
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">description</label>
+      <input type="text" [(ngModel)]="task.description" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone: true}" placeholder="task.description">
+    </div>
+    
+    <button type="submit" (click)="OnSubmit()" class="btn btn-primary">Submit</button>
+  </form> -->
+
+  <!-- ************************************************* -->
+<app-header></app-header>
+  <div class="container-fluid" style="background-color: rgba(201, 201, 201, 0.337); padding-top:2px; height:100vh; overflow: hidden;">
+    <div class="container offset-md-3">
+      <div class="row">
+        <div class="col-md-6">
+          <mat-card class="example-card" style="margin-top: 25%;">
+            <h1 style="text-align: center;">Task Management</h1>
+          <form>
+            <div class="container d-flex justify-content-center align-items-center flex-column">
+              <mat-form-field style="width: 80%;" appearance="outline">
+                <mat-label>Task Tilte</mat-label>
+                <input matInput  type="text" [(ngModel)]="task.title" class="form-control" [ngModelOptions]="{standalone: true}"  aria-describedby="emailHelp" placeholder="task.title" style="outline:none;">
+                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                <!-- <mat-hint>Hint</mat-hint> -->
+              </mat-form-field>
+  
+              <mat-form-field style="width: 80%;" appearance="outline">
+                <mat-label>Task Description</mat-label>
+                <input matInput type="text" [(ngModel)]="task.description" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone: true}" placeholder="task.description" style="outline:none;">
+                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                <!-- <mat-hint>Hint</mat-hint> -->
+              </mat-form-field>
+            </div>
+            <button type="submit" style="margin-left: 65px;" (click)="OnSubmit()" mat-raised-button color="primary">Submit</button>
+            <button class="btn btn-danger backbtn" style="margin-left: 66px;" (click)="goBack()">Back</button>
+          </form>
+        </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+<app-footer></app-footer>

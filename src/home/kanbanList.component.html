@@ -1,0 +1,98 @@
+<!-- <div class="card">
+    <div class="card-header" style="display: flexbox;">
+        <h1>Kanban List</h1>
+        <div>
+        <input type="text" [(ngModel)]='kanbanFilter' >
+        <h1 class="btn btn-lg btn-block" (click)="filter()">Search</h1>
+        </div>
+    </div>
+    <div class="card-body" style="background-color: white;">
+        <div class="row" >
+            <div class="table-responsive" style="align-items: center; margin-left: 25%;margin-top: 5%;background-color: white;">
+                <table class="table" style="width: 50%; text-align: center;">
+                    <thead>
+                        <tr style="background-color: bisque;">
+                            <th style="width: 15%;">
+                                Kanban Id
+                            </th>
+                            <th >
+                                Kanban title
+                            </th>
+                            <th style="width: 25%;">
+                                Create Task
+                            </th>
+                            
+                            <th style="width: 25%;">
+                                warn Kanban
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let kanban of filtKanban" style="background-color: aqua;">          
+                            <td>{{kanban.id}}</td>
+                            <td>{{kanban.title}}</td>
+                            <td>
+                                <div class="btn btn-danger" value="submit" (click)="onNavigate(kanban.id)" type="button">Create
+                                </div>
+                            </td>
+                            <td>
+                                <div class="btn btn-danger" type="button">Update
+                                </div>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                <div style="text-align: center; margin-right: 50%;">
+                    <button class="btn btn-danger" (click)="goBack()">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<!-- 888888888888888888888888888888 -->
+
+
+
+   <!-- <mat-toolbar color="primary" style="overflow: hidden;">
+      <span>Kanban List</span>
+    </mat-toolbar>-->
+  
+<app-header></app-header>
+<div class="container-fluid table_field pt-1" style="background-color: rgba(201, 201, 201, 0.337); height:86vh; overflow: hidden;">
+    <div class="container offset-md-2">
+        <div class="col-md-8">
+            <table class="table mt-5">
+                <thead>
+                  <tr>
+                    <th scope="col">Kanban ID</th>
+                    <th scope="col">Kanban Title</th>
+                    <th scope="col">Action</th>
+                    <!-- <th scope="col">Handle</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let kanban of filtKanban">
+                    <!-- <th scope="row">1</th> -->
+                    <td>{{kanban.id}}</td>
+                    <td>{{kanban.title}}</td>
+                    <td>
+                        <button mat-raised-button color="primary" value="submit" (click)="onNavigate(kanban.id)">Create Task</button> &nbsp; &nbsp;
+                        <button mat-raised-button color="warn" (click)="OnUpdate(kanban.id,kanban.title)">Update</button>
+                        <!--<button mat-raised-button color="warn" style='margin-left: 25px;' (click)="OnDelete(kanban.id)">Delete</button>-->
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div style="text-align: center; margin-right: 50%;">
+                <button class="btn btn-danger backbtn" style="margin-right: 85%;" (click)="goBack()">Back</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<app-footer></app-footer>

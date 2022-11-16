@@ -1,0 +1,18 @@
+/* table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+} */
+.table_field{
+    width: 100% !important;
+    height: 100vh !important;
+    padding-bottom: 30%;
+    background-color: rgba(201, 201, 201, 0.337);
+}
+td{
+    font-family: sans-serif;
+}
+.backbtn{
+    margin-left: 40%;
+}
+
+/* style="" */

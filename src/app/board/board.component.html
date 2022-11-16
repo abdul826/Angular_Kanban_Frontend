@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div cdkDropListGroup class="row">
+        
+        
+        <div class="col-4" *ngFor="let column of data">
+            <!--<div *ngFor="let temp of column">-->
+                <h2>{{column[0].status}}</h2>
+                
+           <!-- </div>-->
+            
+
+            <div cdkDropList [cdkDropListData]="column" class="example-list" (cdkDropListDropped)="drop($event)">
+            <div class="example-container">
+                <div cdkDrag class="example-box" *ngFor="let item of column">
+                    Task title:{{item.title}}<br>
+                    Description:{{item.description}}
+                </div>
+            </div>    
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div cdkDropListGroup class="d-flex">
+        <div
+         cdkDropList 
+         [cdkDropListData]="list" 
+            *ngFor="let list of lists" 
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+        <div class="example-container">    
+        <div
+         cdkDrag [cdkDragData]="item"
+         class="example-box"
+          *ngFor="let item of list">
+            {{item}}
+        </div>
+      </div>
+      </div>
+</div> -->

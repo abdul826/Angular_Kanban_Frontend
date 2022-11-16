@@ -1,0 +1,19 @@
+.maindiv{
+    background-color: rgba(219, 219, 219, 0.225);
+    height: 85vh;
+}
+.signupimage{
+    text-align: center;
+}
+img{
+    width: 15%;
+    height: 11%;
+    border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.055);
+}
+.full_width{
+    width: 60%;
+}
+.signinBtn{
+    margin-left: 21.5%;
+}

@@ -1,0 +1,14 @@
+.container-fluid{
+    height: 85vh;
+    background-color: rgba(201, 201, 201, 0.337);
+}
+img{
+    width: 100%;
+    /* height: 50%; */
+}
+
+@media screen and (max-width: 992px) {
+    .container-fluid {
+    overflow: scroll;
+  }
+}

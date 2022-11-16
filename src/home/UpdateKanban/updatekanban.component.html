@@ -1,0 +1,30 @@
+<div class="container-fluid" style="background-color: rgba(201, 201, 201, 0.337); padding-top:2px; height:100vh; overflow: hidden;">
+    <div class="container offset-md-3">
+      <div class="row">
+        <div class="col-md-6">
+          <mat-card class="example-card" style="margin-top: 25%;">
+            <h1 style="text-align: center;">Kanban Management</h1>
+          <form>
+            <div class="container d-flex justify-content-center align-items-center flex-column">
+              <mat-form-field style="width: 80%;" appearance="outline">
+                <mat-label>Kanban Tilte</mat-label>
+                <input matInput  type="text" [(ngModel)]="kanban.title" class="form-control" [ngModelOptions]="{standalone: true}"  aria-describedby="emailHelp" placeholder="kanban.title" style="outline:none;">
+                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                <!-- <mat-hint>Hint</mat-hint> -->
+              </mat-form-field>
+  
+              
+            </div>
+            <button type="submit" style="margin-left: 65px;" (click)="OnSubmit()" mat-raised-button color="primary">Submit</button>
+            <!--<div style="text-align: center; margin-right: 50%;">-->
+              <button class="btn btn-danger backbtn" style="margin-left: 66px;" (click)="goBack()">Back</button>
+          <!--</div>-->
+          </form>
+        </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+<app-footer></app-footer>

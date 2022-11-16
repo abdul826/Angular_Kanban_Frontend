@@ -1,0 +1,125 @@
+<app-header></app-header>
+<div class="container-fluid">
+  
+  <mat-card class="example-card">
+    <div class="example-container">
+       <h2 class="card-title">To do</h2>
+     
+       <div 
+       
+         cdkDropList
+         #todoList="cdkDropList"
+         [cdkDropListData]="todo1"
+         [cdkDropListConnectedTo]="[testList,backlogList,peerList,doneList,progressList]"
+         class="example-list"
+         (cdkDropListDropped)="drop($event,todostatus)">
+         <div class="example-box" *ngFor="let item of todo1" cdkDrag>
+           Task Title:{{item.title}}<br>
+           Description:{{item.description}}<br>
+           <button class="btn btn-success" type="submit" (click)="OnUpdate(item.id,item.title,item.description)">Update</button>
+           <button class="btn btn-danger" type="submit" (click)="OnDelete(item.id)">Delete</button>
+         </div>
+         <!-- <button class="btn btn-outline-primary" type="submit" (click)="OnAdd()">Add new Task</button> -->
+         <button mat-raised-button color="primary" class="mt-1" (click)="OnAdd()">Add New Task</button>
+       </div>
+     </div>
+   
+     <div class="example-container">
+       <h2 class="card-title">In Test</h2>
+     
+       <div
+         cdkDropList
+         #testList="cdkDropList"
+         [cdkDropListData]="test1"
+         [cdkDropListConnectedTo]="[todoList,peerList,backlogList,doneList,progressList]"
+         class="example-list"
+         (cdkDropListDropped)="drop($event,teststatus)">
+         <div class="example-box" *ngFor="let item of test1" cdkDrag>
+           Task Title:{{item.title}}<br>
+           Description:{{item.description}}<br>
+           <button class="btn btn-success" type="submit" (click)="OnUpdate(item.id,item.title,item.description)">Update</button>
+           <button class="btn btn-danger" type="submit" (click)="OnDelete(item.id)">Delete</button>
+         </div>
+       </div>
+     </div>
+   
+     <div class="example-container">
+       <h2>In progress</h2>
+     
+       <div
+         cdkDropList
+         #progressList="cdkDropList"
+         [cdkDropListData]="progress1"
+         [cdkDropListConnectedTo]="[doneList,todoList,testList,backlogList,peerList]"
+         class="example-list"
+         (cdkDropListDropped)="drop($event,inprogressstatus)">
+         <div class="example-box" *ngFor="let item of progress1" cdkDrag>
+           Task Title:{{item.title}}<br>
+           Description:{{item.description}}
+           <button class="btn btn-success" type="submit" (click)="OnUpdate(item.id,item.title,item.description)">Update</button>
+           <button class="btn btn-danger" type="submit" (click)="OnDelete(item.id)">Delete</button>
+         </div>
+       </div>
+     </div>
+     
+     <div class="example-container">
+       <h2>Done</h2>
+     
+       <div
+         cdkDropList
+         #doneList="cdkDropList"
+         [cdkDropListData]="done1"
+         [cdkDropListConnectedTo]="[todoList,progressList,testList,backlogList,peerList]"
+         class="example-list"
+         (cdkDropListDropped)="drop($event,donestatus)">
+         <div class="example-box" *ngFor="let item of done1" cdkDrag>
+           Task Title:{{item.title}}<br>
+           Description:{{item.description}}
+           <button class="btn btn-success" type="submit" (click)="OnUpdate(item.id,item.title,item.description)">Update</button>
+           <button class="btn btn-danger" type="submit" (click)="OnDelete(item.id)">Delete</button>
+         </div>
+       </div>
+     </div>
+   
+     <div class="example-container">
+       <h2 class="card-title">Back Log</h2>
+     <div
+         cdkDropList
+         #backlogList="cdkDropList"
+         [cdkDropListData]="backlog1"
+         [cdkDropListConnectedTo]="[todoList,progressList,testList,doneList,peerList]"
+         class="example-list"
+         (cdkDropListDropped)="drop($event,backlogstatus)">
+         <div class="example-box" *ngFor="let item of backlog1" cdkDrag>
+           Task Title:{{item.title}}<br>
+           Description:{{item.description}}
+           <button class="btn btn-success" type="submit" (click)="OnUpdate(item.id,item.title,item.description)">Update</button>
+           <button class="btn btn-danger" type="submit" (click)="OnDelete(item.id)">Delete</button>
+         </div>
+       </div>
+     </div>
+   
+     <div class="example-container">
+       <h2 class="card-title">Peer Review</h2>
+     <div
+         cdkDropList
+         #peerList="cdkDropList"
+         [cdkDropListData]="peerreview1"
+         [cdkDropListConnectedTo]="[todoList,progressList,testList,backlogList,doneList]"
+         class="example-list"
+         (cdkDropListDropped)="drop($event,peerreviewstatus)">
+         <div class="example-box" *ngFor="let item of peerreview1" cdkDrag>
+           Task Title:{{item.title}}<br>
+           Description:{{item.description}}
+           <button class="btn btn-success" type="submit" (click)="OnUpdate(item.id,item.title,item.description)">Update</button>
+           <button class="btn btn-danger" type="submit" (click)="OnDelete(item.id)">Delete</button>
+         </div>
+       </div>
+     </div>
+     <button class="btn btn-danger backbtn" style="margin-left: 71px;" (click)="goBack()">Back</button>   
+    </mat-card >
+    
+</div>
+
+<!-- Footer -->
+<app-footer></app-footer>

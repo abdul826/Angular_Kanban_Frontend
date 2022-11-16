@@ -1,0 +1,33 @@
+.container-fluid{
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    height: 85vh;
+
+    background-color: rgba(201, 201, 201, 0.337);
+
+}
+
+.container-fluid>h1{
+
+    font-size: 150px;
+
+    color: rgba(193, 219, 252, 0.784);
+
+}
+
+.container-fluid>p{
+
+    font-size: 70px;
+
+    color: rgb(4, 4, 4);
+
+    margin-top: 50px;
+
+}
